@@ -1,4 +1,5 @@
 const path = require('path');
+const srcDir = path.resolve(__dirname, 'src');
 
 module.exports = {
   devtool: 'source-map',
@@ -15,6 +16,15 @@ module.exports = {
         loader: "babel-loader",
       }
     ],
+  },
+  resolve: {
+    modules: [
+      srcDir,
+      'node_modules',
+    ],
+    alias: {
+      'react-dom': '@hot-loader/react-dom',
+    },
   },
   devServer: {
     port: 2019,
