@@ -8,7 +8,7 @@ class Test extends PureComponent {
 
   render() {
     return (
-      <div>Test</div>
+      <div>hello world!</div>
     );
   }
 }
