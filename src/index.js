@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { hot } from 'react-hot-loader/root';
-import { Test } from 'components/Test';
+import { Example } from 'components/Test';
 
-const Component = () => <div><Test /></div>;
+const Component = () => <div><Example /></div>;
 const ComponentWithHot = hot(Component);
 const rootEl = document.getElementById('root');
 

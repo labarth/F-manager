@@ -1,16 +1,18 @@
-import React, { PureComponent } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-class Test extends PureComponent {
-  static propTypes = {};
+const Example = () => {
+  // Объявление переменной состояния, которую мы назовём "count"
+  const [count, setCount] = useState(0);
 
-  static defaultProps = {};
+  return (
+    <div>
+      <p>Вы кликнули {count} раз</p>
+      <button onClick={() => setCount(count + 1)}>
+        Нажми на меня
+      </button>
+    </div>
+  );
+};
 
-  render() {
-    return (
-      <div>hello world!</div>
-    );
-  }
-}
-
-export { Test };
+export { Example };
