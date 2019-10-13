@@ -2,3 +2,5 @@
 /node_modules/
 /build
 yarn-error.log
+server/node_modules
+server/yarn-error.lock

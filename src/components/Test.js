@@ -1,18 +1,33 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-const Example = () => {
-  // Объявление переменной состояния, которую мы назовём "count"
-  const [count, setCount] = useState(0);
+class Example extends React.PureComponent {
+  state = {
+    items: [],
+  }
 
-  return (
-    <div>
-      <p>Вы кликнули {count} раз</p>
-      <button onClick={() => setCount(count + 1)}>
-        Нажми на меня
-      </button>
-    </div>
-  );
-};
+  componentDidMount() {
+   this.getData();
+  }
+
+  getData = async () => {
+    const response = await fetch('api/items');
+    const data = await response.json();
+    this.setState({ items: data });
+  }
+
+  render() {
+    return (
+      <ul>
+        {this.state.items.map((item) => (
+          <li key={item.title}>
+            <p>{item.title}</p>
+            <p>{item.description}</p>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+}
 
 export { Example };
