@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => ({ test: state.test });
 
-class App extends PureComponent {
+@connect(mapStateToProps, null)
+export class App extends PureComponent {
   static propTypes = {};
 
   static defaultProps = {};
@@ -15,6 +16,3 @@ class App extends PureComponent {
     );
   }
 }
-
-const AppConnected = connect(mapStateToProps)(App);
-export { AppConnected as App };
