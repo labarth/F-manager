@@ -41,7 +41,6 @@
     "eslint-plugin-jest": "^23.0.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.16.0",
-    "immutable": "^4.0.0-rc.12",
     "terser-webpack-plugin": "^2.1.2",
     "webpack": "^4.41.0",
     "webpack-cli": "^3.3.9",
@@ -49,6 +48,7 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "immutable": "^4.0.0-rc.12",
     "prop-types": "^15.7.2",
     "@babel/runtime": "^7.6.3",
     "@hot-loader/react-dom": "^16.9.0",
