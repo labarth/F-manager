@@ -10,9 +10,13 @@ const mapStateToProps = (state) => ({ list: state.list });
 
 @connect(mapStateToProps, null)
 export class App extends PureComponent {
-  static propTypes = {};
+  static propTypes = {
+    list: PropTypes.array,
+  };
 
-  static defaultProps = {};
+  static defaultProps = {
+    list: [],
+  };
 
   render() {
     const { list } = this.props;

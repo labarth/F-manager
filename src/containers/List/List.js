@@ -10,7 +10,9 @@ class List extends PureComponent {
   render() {
     return (
       <ul>
-        {this.props.list.map((item) => <ListItem price={item.price} description={item.description} />)}
+        {this.props.list.map((item) => (
+          <ListItem price={item.price} description={item.description} />
+        ))}
       </ul>
     );
   }
