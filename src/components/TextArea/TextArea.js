@@ -28,9 +28,8 @@ class TextArea extends PureComponent {
         placeholder={placeholder}
         isRequired={isRequired}
         name={name}
-      >
-        {value}
-      </StyledTextArea>
+        value={value}
+      />
     );
   }
 }
