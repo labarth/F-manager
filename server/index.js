@@ -1,37 +1,39 @@
 const express = require('express');
+
 const app = express();
 
 const data = [
   {
-    title: 'title 1',
+    id: '1',
+    price: '400',
     description: 'Lorem ipsum dolor sit amet.',
   },
   {
-    title: 'title 2',
+    id: '2',
+    price: '550',
     description: 'Lorem ipsum dolor sit amet.',
   },
   {
-    title: 'title 3',
+    id: '3',
+    price: '430',
     description: 'Lorem ipsum dolor sit amet.',
   },
   {
-    title: 'title 4',
+    id: '4',
+    price: '500',
     description: 'Lorem ipsum dolor sit amet.',
   },
   {
-    title: 'title 5',
+    id: '5',
+    price: '450',
     description: 'Lorem ipsum dolor sit amet.',
   },
 ];
 
-app.get('/', function (req, res) {
-  res.send('Hello World!');
+app.get('/api/items', (req, res) => {
+  res.send(JSON.stringify(data));
 });
 
-app.get('/api/items', function (req, res) {
-  res.send(JSON.stringify(data));
-})
-
-app.listen(3000, function () {
+app.listen(3000, () => {
   console.log('Example app listening on port 3000!');
 });
