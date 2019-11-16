@@ -1,6 +1,8 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 
 const app = express();
+app.use(bodyParser.json());
 
 const data = [
   {
@@ -32,6 +34,18 @@ const data = [
 
 app.get('/api/items', (req, res) => {
   res.send(JSON.stringify(data));
+});
+
+app.post('/api/items', (req, res) => {
+  const item = req.body;
+  data.push(item);
+  res.json(data);
+});
+
+app.patch('/api/items', (req, res) => {
+  const item = req.body;
+  data.push(item);
+  res.sendStatus(200);
 });
 
 app.listen(3000, () => {
