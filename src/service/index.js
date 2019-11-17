@@ -34,8 +34,18 @@ export class CoreAPIService {
       },
       body: JSON.stringify(data),
     })
-      .then((response) => response.json())
-      .then((json) => json);
+      .then(handleErrors)
+      .then((res) => res.text())
+      .then((text) => {
+        if (text) {
+          try {
+            return JSON.parse(text);
+          } catch (e) {
+            return {};
+          }
+        }
+        return {};
+      });
   }
 
   static patch(url, data) {

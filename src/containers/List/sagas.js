@@ -1,7 +1,7 @@
 import { List } from 'immutable';
 import { put, call, takeEvery } from 'redux-saga/effects';
 import * as actions from './actions';
-import { getNotes, addNotePatch } from './service';
+import { getNotes, addNote } from './service';
 
 export function* getNotesSaga() {
   try {
@@ -14,7 +14,7 @@ export function* getNotesSaga() {
 
 export function* addNoteSaga({ payload }) {
   try {
-    yield call(addNotePatch, { payload });
+    yield call(addNote, { payload });
     yield put(actions.ADD_NOTE_SUCCESS({ note: payload }));
   } catch (e) {
     yield put(actions.ADD_NOTE_FAILURE({ error: 'add note failure' }));
