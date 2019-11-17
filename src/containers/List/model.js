@@ -6,7 +6,7 @@ export class ListModel extends Record({
   error: null,
 }) {
   addNote(note) {
-    return this.set('list', this.list.push(note));
+    return this.update('list', (notes) => notes.push(note));
   }
 
   deleteNote(id) {
