@@ -12,10 +12,10 @@ export function* getNotesSaga() {
   }
 }
 
-export function* addNoteSaga({ payload }) {
+export function* addNoteSaga({ payload: note }) {
   try {
-    yield call(addNote, { payload });
-    yield put(actions.ADD_NOTE_SUCCESS({ note: payload }));
+    yield call(addNote, note);
+    yield put(actions.ADD_NOTE_SUCCESS({ note }));
   } catch (e) {
     yield put(actions.ADD_NOTE_FAILURE({ error: 'add note failure' }));
   }
