@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { v4 } from 'uuid';
 import * as notesActions from 'containers/List/actions';
@@ -9,9 +10,12 @@ import { Row } from 'components/Layout/Row';
 import { StyledForm } from './Styled';
 
 
-
 @connect(null, { addNote: notesActions.ADD_NOTE_REQUEST })
 class Form extends PureComponent {
+  static propTypes = {
+    addNote: PropTypes.func.isRequired,
+  };
+
   state = {
     price: '',
     description: '',

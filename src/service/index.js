@@ -1,4 +1,4 @@
-const coreAPIurl = 'http://localhost:3000/';
+/* eslint prefer-promise-reject-errors: 0 */
 
 const handleErrors = (response) => {
   if (!response.ok) {
