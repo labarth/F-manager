@@ -3,19 +3,23 @@ import PropTypes from 'prop-types';
 
 class Button extends PureComponent {
   static propTypes = {
-    onClick: PropTypes.func.isRequired,
     children: PropTypes.node.isRequired,
+    type: PropTypes.string,
+    onClick: PropTypes.func,
   };
 
-  static defaultProps = {};
+  static defaultProps = {
+    type: 'button',
+    onClick: Function.prototype,
+  };
 
   render() {
-    const { onClick, children } = this.props;
+    const { onClick, children, type } = this.props;
 
     return (
       <button
+        type={type}
         onClick={onClick}
-        type="button"
       >
         {children}
       </button>

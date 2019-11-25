@@ -7,26 +7,26 @@ class TextArea extends PureComponent {
     onChange: PropTypes.func.isRequired,
     value: PropTypes.string.isRequired,
     placeholder: PropTypes.string,
-    isRequired: PropTypes.bool,
+    required: PropTypes.bool,
     name: PropTypes.string,
   };
 
   static defaultProps = {
     placeholder: null,
-    isRequired: false,
+    required: false,
     name: null,
   };
 
   render() {
     const {
-      placeholder, value, isRequired, name, onChange,
+      placeholder, value, required, name, onChange,
     } = this.props;
 
     return (
       <StyledTextArea
         onChange={onChange}
         placeholder={placeholder}
-        isRequired={isRequired}
+        required={required}
         name={name}
         value={value}
       />

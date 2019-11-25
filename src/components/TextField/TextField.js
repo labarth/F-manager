@@ -9,25 +9,25 @@ class TextField extends PureComponent {
     type: PropTypes.string,
     name: PropTypes.string,
     placeholder: PropTypes.string,
-    isRequired: PropTypes.bool,
+    required: PropTypes.bool,
   };
 
   static defaultProps = {
     name: null,
     placeholder: null,
     type: 'text',
-    isRequired: false,
+    required: false,
   };
 
   render() {
     const {
-      placeholder, onChange, value, type, isRequired, name,
+      placeholder, onChange, value, type, required, name,
     } = this.props;
 
     return (
       <StyledTextField
         name={name}
-        isRequired={isRequired}
+        required={required}
         type={type}
         placeholder={placeholder}
         onChange={onChange}

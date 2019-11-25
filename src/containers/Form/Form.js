@@ -21,15 +21,18 @@ class Form extends PureComponent {
     description: '',
   };
 
-  onAddNote = () => {
+  onAddNote = (e) => {
+    e.preventDefault();
+    const { price, description } = this.state;
+
     this.props.addNote({
       id: v4(),
-      price: '123443312',
-      description: 'blablabla',
+      price,
+      description,
     });
   }
 
-  onPriceChange = (e) => this.setState({ price: e.target.value });
+  onPriceChange = (e) => this.setState({ price: e.target.value.replace(/[A-Za-z_,()]/g, '') });
 
   onDescriptionChange = (e) => this.setState({ description: e.target.value });
 
@@ -37,24 +40,25 @@ class Form extends PureComponent {
     const { price, description } = this.state;
 
     return (
-      <StyledForm>
+      <StyledForm onSubmit={this.onAddNote}>
         <Row>
           <TextArea
             placeholder="Введите описание"
             value={description}
             onChange={this.onDescriptionChange}
+            required
           />
         </Row>
         <Row>
           <TextField
-            type="number"
             placeholder="Введите цену"
             value={price}
             onChange={this.onPriceChange}
+            required
           />
         </Row>
         <Row>
-          <Button onClick={this.onAddNote}>Добавить</Button>
+          <Button type="submit">Добавить</Button>
         </Row>
       </StyledForm>
     );
