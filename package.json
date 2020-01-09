@@ -6,7 +6,7 @@
   "scripts": {
     "server": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "start": "cd ./server index.js",
+    "start": "cd ./server && node index.js",
     "lint": "eslint ./src --fix"
   },
   "repository": {
