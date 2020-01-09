@@ -4,9 +4,9 @@
   "description": "f-manager",
   "main": "yes",
   "scripts": {
-    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "server": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "server": "cd ./server index.js",
+    "start": "cd ./server index.js",
     "lint": "eslint ./src --fix"
   },
   "repository": {
